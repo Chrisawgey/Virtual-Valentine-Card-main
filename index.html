@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffcccc; /* Pink background color */
+      text-align: center;
+    }
+
+    #card {
+      width: 80%; /* Adjusted for responsiveness */
+      max-width: 300px; /* Maximum width */
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    #heart {
+      color: #e74c3c;
+      font-size: 2em;
+      animation: heartbeat 1s infinite; /* Heartbeat animation */
+      cursor: pointer;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    #message {
+      margin-top: 20px;
+    }
+
+    #signature {
+      margin-top: 40px;
+      font-style: italic;
+      color: #3498db;
+    }
+
+    /* Media query for mobile responsiveness */
+    @media screen and (max-width: 600px) {
+      #card {
+        width: 90%; /* Adjusted for smaller screens */
+      }
+    }
+
+    /* Styles for the custom pop-up */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    #popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    #close-popup {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+<div id="card">
+  <h1>Happy Valentine's Day!</h1>
+  <span id="heart" onclick="showPopup()">❤️</span>
+  <p id="message">Dear Adriana,<br>
+    You fill my heart with joy and love. I cant wait to spend the rest of our lives together. TE AMO</p>
+  <div id="signature">With love, <br>Chris</div>
+</div>
+
+<!-- Custom pop-up -->
+<div id="popup">
+  <div id="popup-content">
+    <span id="close-popup" onclick="closePopup()">✖</span>
+    <p>Thank you for touching my heart!</p>
+  </div>
+</div>
+
+<script>
+  // Touch event for mobile devices
+  function showPopup() {
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+
